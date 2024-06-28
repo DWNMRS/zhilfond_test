@@ -1,0 +1,128 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+  max-width: 291px;
+  height: 100%;
+  padding: 27px 30px 27px 20px;
+  border-right: 1px solid $border;
+  background-color: $background;
+
+  &__title {
+    color: $text;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+  }
+
+  &__search {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    width: 240px;
+    padding: 14.5px 16px;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: $white;
+    border: 1.5px solid $border-secondary;
+    border-radius: 8px;
+    margin-top: 22px;
+  }
+
+  &__results {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+  }
+
+  &__status {
+    font-size: 14px;
+    margin-top: 10px;
+    color: $text-secondary;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: scroll;
+    margin-top: 18px;
+    gap: 18px;
+    height: inherit;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__user {
+    height: 70px;
+    min-height: 70px;
+    width: 240px;
+    display: flex;
+    border-radius: 10px;
+    border: 1px solid $background-secondary;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px $shadow;
+    transition: 0.2s;
+
+    &:hover {
+      background: $background-secondary;
+    }
+
+    * {
+      cursor: pointer;
+    }
+
+    &-avatar {
+      width: 70px;
+      min-width: 70px;
+      height: 100%;
+      border-right: 1px solid $background-secondary;
+      background: url("/public/image.png");
+      background-color: $white;
+      background-size: cover;
+      background-position: center;
+    }
+
+    &-info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+      font-size: 14px;
+      padding: 15px;
+      transition: background-color 0.15s ease-in-out;
+      overflow: hidden;
+    }
+
+    &-name {
+      font-weight: 600;
+      color: $text;
+      min-width: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      word-break: break-word;
+    }
+
+    &-email {
+      color: $text-secondary;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      word-break: break-word;
+    }
+
+    &--active {
+      background-color: $background-secondary;
+    }
+  }
+}
